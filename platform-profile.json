@@ -1,0 +1,71 @@
+{
+  "ucp": {
+    "capabilities": {
+      "dev.ucp.shopping.checkout": [
+        {
+          "schema": "https://ucp.dev/schemas/shopping/checkout.json",
+          "spec": "https://ucp.dev/specification/checkout",
+          "version": "2026-04-08"
+        }
+      ],
+      "dev.usp.services.paid_bookings": [
+        {
+          "extends": "dev.ucp.shopping.checkout",
+          "schema": "https://usp.dev/schemas/services/paid_bookings.json",
+          "spec": "https://usp.dev/specification#7-ucp-native-mode",
+          "version": "2026-02-09"
+        }
+      ]
+    },
+    "payment_handlers": {
+      "com.stripe": [
+        {
+          "available_instruments": [
+            {
+              "type": "shared_payment_token"
+            }
+          ],
+          "id": "com.stripe",
+          "schema": "https://docs.stripe.com/agentic-commerce/shared-payment-token/schemas/instrument.json",
+          "spec": "https://docs.stripe.com/agentic-commerce/shared-payment-token",
+          "version": "2026-04-08"
+        }
+      ]
+    },
+    "services": {},
+    "version": "2026-04-08"
+  },
+  "usp": {
+    "capabilities": {
+      "dev.usp.services.availability": [
+        {
+          "schema": "https://usp.dev/schemas/services/availability.json",
+          "spec": "https://usp.dev/specification#4-availability",
+          "version": "2026-08-14"
+        }
+      ],
+      "dev.usp.services.bookings": [
+        {
+          "schema": "https://usp.dev/schemas/services/booking.json",
+          "spec": "https://usp.dev/specification#5-booking-lifecycle",
+          "version": "2026-08-14"
+        }
+      ],
+      "dev.usp.services.catalog": [
+        {
+          "schema": "https://usp.dev/schemas/services/catalog.json",
+          "spec": "https://usp.dev/specification#3-service-catalog",
+          "version": "2026-08-14"
+        }
+      ]
+    },
+    "services": {
+      "dev.usp.services": [
+        {
+          "transport": "rest"
+        }
+      ]
+    },
+    "version": "2026-08-14"
+  }
+}

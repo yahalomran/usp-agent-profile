@@ -1,0 +1,31 @@
+name: publish
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up Python
+        uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
+        with:
+          python-version: "3.12"
+
+      - name: Install validators
+        run: pip install "jsonschema>=4.22" "referencing>=0.35" pytest
+
+      - name: Validate platform-profile.json
+        run: python tools/build.py
+
+      - name: Tests
+        run: python -m pytest -q
