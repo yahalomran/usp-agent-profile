@@ -2,11 +2,13 @@
 
 Shared, **keyless** USP/UCP platform profile for the USP Agent.
 
-**Canonical URL:** `https://profile.usp-agent.dev/platform-profile.json`
+**Canonical URL:** `https://profile.booking-agent.dev/platform-profile.json`
 
 During personal-account verification (issue [#114](https://github.com/wix-private/universal-scheduling-protocol-spec/issues/114) Steps 0–9):
 
 `https://yahalomran.github.io/usp-agent-profile/platform-profile.json`
+
+Live custom domain binding for `profile.booking-agent.dev` is preferred **after** Step 10 (transfer to the public Wix org). Until then, use the github.io URL above.
 
 ## Source of truth
 
